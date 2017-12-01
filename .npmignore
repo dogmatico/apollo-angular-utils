@@ -1,0 +1,11 @@
+# test
+coverage
+spec
+.nyc_output
+
+# src
+src
+
+#test
+tsconfig.*
+tslint.json

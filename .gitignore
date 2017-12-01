@@ -1,0 +1,9 @@
+# Libraries
+node_modules
+
+# Builds
+dist
+coverage
+
+#test
+.nyc_output
