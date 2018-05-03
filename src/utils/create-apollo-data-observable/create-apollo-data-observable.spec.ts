@@ -3,9 +3,8 @@
  */
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient, ApolloQueryResult, NetworkStatus } from 'apollo-client';
-import { ApolloLink } from 'apollo-link';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
+import { ApolloLink, DocumentNode } from 'apollo-link';
+import { Observable, of } from 'rxjs';
 
 import graphqlTag from 'graphql-tag';
 
@@ -34,7 +33,7 @@ describe('createApolloDataObservable', () => {
   let apolloClient: ApolloClient<any>;
   let link: ApolloLink;
   let cache: InMemoryCache;
-  let query: DocumentFragment;
+  let query: DocumentNode;
 
   beforeEach(() => {
     // tslint:disable-next-line:no-any
@@ -74,6 +73,13 @@ describe('createApolloDataObservable', () => {
       test: 'TEST',
     }}, false);
     const response: Observable<ApolloQueryResult<TestQueryResponse>> = of(apolloRes);
+
+    Object.defineProperty(response, 'setVariables', {
+      // tslint:disable-next-line:no-any
+      value: (_: any) => {
+        return Promise.resolve();
+      },
+    });
 
     spyOn(apolloClient, 'watchQuery').and.returnValue(response);
     createApolloDataObservable(apolloClient, {

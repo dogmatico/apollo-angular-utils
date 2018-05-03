@@ -1,5 +1,5 @@
 import { ApolloClient, ApolloQueryResult, NetworkStatus, WatchQueryOptions } from 'apollo-client';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 /**
  * Create an Apollo Observable that displays the loading status

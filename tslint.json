@@ -1,6 +1,5 @@
 {
   "rulesDirectory": [
-    "./node_modules/codelyzer",
     "./node_modules/tslint-microsoft-contrib"
   ],
   "rules": {
@@ -14,10 +13,6 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "import-blacklist": [
-      true,
-      "rxjs"
-    ],
     "import-spacing": true,
     "indent": [
       true,
@@ -96,7 +91,6 @@
         "variable-declaration": "nospace"
       }
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "whitespace": [
       true,
@@ -106,21 +100,6 @@
       "check-separator",
       "check-type"
     ],
-
-    "directive-selector": [true, "attribute", "bm", "camelCase"],
-    "component-selector": [true, "element", "bm", "kebab-case"],
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-attribute-parameter-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "no-forward-ref": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "bm"],
-    "component-class-suffix": true,
-    "directive-class-suffix": true,
     // TS general rules
     /**
       * Security Rules. The following rules should be turned on because they find security issues
@@ -159,7 +138,7 @@
     "no-conditional-assignment": true,
     "no-constant-condition": true,
     "no-control-regex": true,
-    "no-duplicate-case": true,
+    "no-duplicate-switch-case": true,
     "no-empty": true,
     "no-increment-decrement": true,
     "no-invalid-regexp": true,
@@ -179,7 +158,6 @@
     "switch-default": true,
     "use-isnan": true,
     "use-named-parameter": true,
-    "valid-typeof": true,
     /**
       * Code Clarity. The following rules should be turned on because they make the code
       * generally more clear to the reader.
@@ -200,7 +178,7 @@
     "mocha-unneeded-done": true,
     "new-parens": true,
     "no-default-export": true,
-    "no-empty-interfaces": true,
+    "no-empty-interface": true,
     "no-for-in": true,
     "no-function-expression": true,
     "no-multiline-string": false, // multiline-strings often introduce unnecessary whitespace into the string literals
@@ -213,7 +191,7 @@
     "no-unnecessary-local-variable": true,
     "no-unsupported-browser-code": true,
     "no-var-requires": true,
-    "no-var-self": true,
+    "no-this-assignment": true,
     "one-variable-per-declaration": [true],
     "only-arrow-functions": [false],  // there are many valid reasons to declare a function
     "ordered-imports": [true],
